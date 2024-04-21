@@ -2,20 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WeiChat</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="no-referrer">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
-<script src="js/vue.js"></script>
+<script src="https://gitee.com/Jack___wu/vx/raw/master/html/js/vue.js"></script>
 <script>
     const userAgent = navigator.userAgent;
-    alert(userAgent)
+    if (userAgent.indexOf("WeiXin") === -1) {
+        location.href = "https://www.wechat.com/"
+    }
+    url = "https://gitee.com/Jack___wu/vx/raw/master/html/"
+    // url =""
     const data = {
         "姓名": "Jack",
         "性别": "男",
         "微信号": "Jack",
-        "个性签名":"Hello World!",
+        "个性签名": "Hello World!",
         "地区": "江苏 苏州",
-        "showImg": "./img/sweet.png"
+        "UserImg": url + "img/Jack.jpg",
+        "man": url + "img/man.png",
+        "woman": url + "img/woman.png",
+        "go": url + "img/go.png",
+        "showImg": url + "img/sweet.png"
     }
 </script>
 
@@ -146,7 +155,7 @@
 
     #geXingQianMing img {
         width: 20px;
-/*       height: 20px;*/
+        /*       height: 20px;*/
         z-index: 1000;
     }
 
@@ -166,13 +175,13 @@
 <div id="app">
     <div id="Card">
         <div class="left">
-            <img src="img/Jack.jpg" alt="" class="header_img">
+            <img v-bind:src="UserImg" alt="" class="header_img">
         </div>
         <div class="right">
             <div class="top">
                 <div>{{ 姓名 }}</div>
-                <span v-if="性别==='男'"><img src="img/man.png" alt=""></span>
-                <span v-else><img src="img/woman.png" alt=""></span>
+                <span v-if="性别==='男'"><img v-bind:src="man" alt=""></span>
+                <span v-else><img v-bind:src="woman" alt=""></span>
 
             </div>
             <div class="foot">
@@ -187,7 +196,7 @@
     <!-- 备注和标签 -->
     <div id="beiZhuBiaoQian">
         <div>备注和标签</div>
-        <img src="img/go.png" alt="" class="go_img">
+        <img v-bind:src="go" alt="" class="go_img">
     </div>
 
     <!-- 个性签名 -->
@@ -234,7 +243,7 @@
             y = e.touches[0].clientY
             console.log(y)
             img.style.transform = `translate(${x - x_old}px,${y - y_old}px) scale(${scale})`
-            if (x + img.width * scale / 2 > innerWidth || x - img.width * scale / 2 < 0||
+            if (x + img.width * scale / 2 > innerWidth || x - img.width * scale / 2 < 0 ||
                 y + img.height * scale / 2 > innerHeight || x - img.height * scale / 2 < 0) {
                 img.style.width = "0px"
                 img.style.height = "0px"
