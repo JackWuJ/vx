@@ -9,10 +9,7 @@
 <script src="https://gitee.com/Jack___wu/vx/raw/master/html/js/vue.js"></script>
 <script>
     const userAgent = navigator.userAgent;
-    alert(userAgent)
-    alert(userAgent.indexOf("Wechat"))
-    alert(userAgent.indexOf("WeChat"))
-    if (userAgent.indexOf("Wechat") === -1 || userAgent.indexOf("WeChat") === -1) {
+    if (userAgent.indexOf("Wechat") === -1 && userAgent.indexOf("WeChat") === -1) {
         location.href = "https://www.wechat.com/"
     }
     url = "https://gitee.com/Jack___wu/vx/raw/master/html/"
