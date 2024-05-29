@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="indexMusicStart.css">
+</head>
+
+<body>
+<!--<audio src="music/Run%20To%20You.mp3" controls autoplay></audio>-->
+<div class="container">
+    <ul class="lrc-list">
+    </ul>
+</div>
+<button onclick="click_()">随机一下</button>
+
+<script src="text.lrc.js"></script>
+<script src="parseLrc.js"></script>
+<script>
+    const click_ = () => {
+        setTimeout(()=>{
+            setOffset(random(0, lrc.split("\n").length))
+        },1)
+        setTimeout(()=>{
+            setOffset(random(0, lrc.split("\n").length))
+        },1000)
+        setTimeout(()=>{
+            setOffset(random(0, lrc.split("\n").length))
+        },2000)
+    }
+    click_()
+</script>
+
+</body>
+
+
+</html>
