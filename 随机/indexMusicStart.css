@@ -1,13 +1,13 @@
-/* * {
+ {
     margin: 0;
     padding: 0;
-} */
+}
 
 body {
     background: #000;
     color: #666;
     text-align: center;
-    font-size: 1rem;
+    /*font-size: 1rem;*/
 }
 
 button {
@@ -20,10 +20,10 @@ button {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 5%;
-    height: 40rem;
+    /*bottom: 5%;*/
+    /*height: 4rem;*/
     /*border: 2px solid seashell;*/
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .container ul {
@@ -40,7 +40,7 @@ button {
     transition: 0.6s;
     /*transform: scale(1.2);*/
     /*color: aliceblue;*/
-    height: 30px;
+    /*height: 30px;*/
     line-height: 30px;
 }
 .container li.active {
