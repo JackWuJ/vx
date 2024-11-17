@@ -3,29 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="referrer" content="no-referrer">
-    <title></title>
+    <title>我的微信</title>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
 <script src="https://gitee.com/Jack___wu/vx/raw/main/js/vue.js"></script>
 <script>
-    const userAgent = navigator.userAgent;
-    if (userAgent.indexOf("Wechat") === -1 && userAgent.indexOf("WeChat") === -1) {
-        location.href = "https://www.wechat.com/"
-    }
+    // const userAgent = navigator.userAgent;
+    // if (userAgent.indexOf("Wechat") === -1 && userAgent.indexOf("WeChat") === -1) {
+    //     location.href = "https://www.wechat.com/"
+    // }
+    // function getParametersAsObject() {
+    //     const url = location.href;
+    //     const index = url.indexOf('?');
+    //     if (index === -1) {
+    //         return {};
+    //     }
+    //     const queryString = url.substring(index + 1);
+    //     const parameterPairs = queryString.split('&');
+    //     const parameters = {};
+    //     for (const pair of parameterPairs) {
+    //         let [key, value] = pair.split('=');
+    //         // 如果值是编码形式，进行解码
+    //         if (key.includes('%')) {
+    //             key = decodeURIComponent(key);
+    //         }
+    //         if (value.includes('%')) {
+    //             value = decodeURIComponent(value);
+    //         }
+    //         parameters[key] = value;
+
+    //     }
+    //     return parameters;
+    // }
+
+    // const args = getParametersAsObject();
+    // console.log(args);
+
     url = "https://gitee.com/Jack___wu/vx/raw/main/"
     // url =""
-    const data = {
+    // const data = {
+    //     "姓名": args['姓名'],
+    //     "性别": args['性别'],
+    //     "微信号": args['微信号'],
+    //     "个性签名": args['个性签名'],
+    //     "地区": args['地区'],
+    //     // "UserImg": url + "img/Jack.jpg",
+    //     "UserImg": args['头像图片'],
+    //     "man": url + "img/man.png",
+    //     "woman": url + "img/woman.png",
+    //     "go": url + "img/go.png",
+    //     "showImg": args['展示图片']
+    //     // "showImg": url + "img/沙琪玛.png"
+    // }
+    const args = {
         "姓名": "Jack",
         "性别": "男",
         "微信号": "Jack",
-        "个性签名": "Hello World!",
-        "地区": "江苏 苏州",
-        "UserImg": url + "img/Jack.jpg",
+        "个性签名": "我是一个好孩子",
+        "地区": "中国",
+        "头像图片": "https://raw.githubusercontent.com/JackWuJ/Jack_/refs/heads/main/img/Jack.jpg",
+        // "展示图片": "/img/sweet.png"
+        "展示图片": "https://github.com/JackWuJ/Jack_/blob/main/img/sweet.png?raw=true"
+        // https://github.com/JackWuJ/Jack_/blob/main/img/sweet.png?raw=true
+    }
+
+    
+    const data = {
+        "姓名": args['姓名'],
+        "性别": args['性别'],
+        "微信号": args['微信号'],
+        "个性签名": args['个性签名'],
+        "地区": args['地区'],
+        // "UserImg": url + "img/Jack.jpg",
+        "UserImg": args['头像图片'],
         "man": url + "img/man.png",
         "woman": url + "img/woman.png",
         "go": url + "img/go.png",
-        "showImg": url + "img/沙琪玛.png"
+        "showImg": args['展示图片']
+        // "showImg": url + "img/沙琪玛.png"
     }
+
+    
+
+    
 </script>
 
 <style>
@@ -216,6 +277,7 @@
         <div class="left gexingqianmingAndLaiyuan laiyuan_text">来源</div>
         <div class="right laizisaoyisao_text">来自扫一扫</div>
     </div>
+    
     <div id="tianJiaDaoTongXunLu">添加到通讯录</div>
 </div>
 </body>
